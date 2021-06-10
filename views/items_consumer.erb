@@ -1,0 +1,9 @@
+<h1>Hi Items List Consumer View</h1>
+
+<% each item %>
+    <button>Details</button> "/items/params id"
+    <button>request</button>(need to link session[:user_id] to 'requested' column) "/items/request" put
+<% end %>
+
+
+<%# outside MVP: create search function that then calls back to '/items/request %>
