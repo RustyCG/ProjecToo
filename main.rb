@@ -49,13 +49,12 @@ end
 
 get '/items' do
   redirect '/login' unless logged_in?
-  res = run_sql("SELECT * FROM supplier_items")
-  if res.count < 1
-    redirect'/main'
-  else
-    supplier_list = res[0]
-    erb :items_consumer, locals: {supplier_list: supplier_list}
-  end
+  res = run_sql("SELECT * FROM supplier_items;")
+    if res.count < 1
+      redirect'/main'
+    end
+  erb :items, locals: { supplier_list: res }
+end
 
   # if org_type == 'supplier'
   #   res = run_sql("SELECT * FROM supplier_items WHERE org_name = #{session[:org_id]};")
@@ -74,8 +73,8 @@ get '/items' do
   #     erb :items_consumer, locals: {supplier_list: supplier_list}
   #   end
   # end
+  # end
 
-end
 
 get '/items/new' do
   redirect '/login' unless logged_in?
@@ -106,7 +105,7 @@ post '/items' do
 end
 
 
-patch '/items/request/:id' do  #*************
+patch '/items/:id/request' do  #*************
   redirect '/login' unless logged_in?
   sql = "UPDATE supplier_items SET requester_user_id = #{current_user()['id']}, requester_org_id = #{current_user()['org_id']} WHERE  id = $1;"
 
@@ -141,7 +140,7 @@ get '/items/:id/edit' do
   erb :edit_item_form, locals: { item: item }
 end
 
-patch '/items/:id' do
+patch '/items/:id' do #***** CHECK IF PATCH OR PUT
   sql = "UPDATE supplier_items SET user_id = $1, manufacturer = $2, item_name = $3, manufacturer_ref_num = $4, quantity = $5, item_type = $6, item_desc = $7, item_url = $8, item_expiry_date = $9, date_available_from = $10, date_available_to = $11, storage_location = $12, storage_req = $13 WHERE id = $14;"
 
   run_sql(sql, 

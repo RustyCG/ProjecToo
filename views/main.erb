@@ -1,5 +1,36 @@
 
-<h1>Hi Main</h1>
+<h1><%= current_user()['org_name'] %> ProjecToo Actions</h1>
+
+<% if org_type == "consumer" %>
+    <nav>
+        <ul class="main_nav">
+            <li class="nav_items"><a href="/items">View 'Available' List</a></li>
+            <li class="nav_items"><a href="">Search by Item</a></li>
+            <li class="nav_items"><a href="">Request Item</a></li>
+            <li class="nav_items"><a href="">Edit Requested Items List</a></li>
+        </ul>
+    </nav>
+<% end %>
+
+<nav>
+    <ul class="main_nav">
+        <li class="nav_items"><a href="/items">View 'Available' List</a></li>
+        <li class="nav_items"><a href="">Search by Item</a></li>
+        <li class="nav_items"><a href="/items/new">Add Item</a></li>
+        <li class="nav_items"><a href="">View 'Requested' List</a></li>
+    </ul>
+</nav>
+
+
+<h3>Quick Global View of Available Items</h3>
+<table class="main_table">
+    <tr>
+        <th>Item Type</th>
+        <th>Quantity</th>
+        <th>Location</th>
+    </tr>
+</table>
+
 
 <%# if supplier
     2 buttons one for supplier specific db list ('/items') other for global view

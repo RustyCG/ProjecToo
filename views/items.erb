@@ -1,0 +1,50 @@
+<h1><%= current_user()['org_name'] %> Available Equipment List</h1>
+
+
+<table class="items_table">
+    <tr>
+        <th>Supplier</th>
+        <th>Manufacturer</th>
+        <th>Item Name</th>
+        <th>Manufacturer Ref. Num.</th>
+        <th>Qty</th>
+        <th>Item Type</th>
+        <th>Item Description</th>
+        <th>User Manual URL</th>
+        <th>Expiry Date</th>
+        <th>Available From</th>
+        <th>Available To</th>
+        <th>Storage Location</th>
+        <th>Storage Requirements</th>
+        <th>Requested By</th>
+    </tr>
+    <% supplier_list.each do |item|%>
+        <tr>
+            <td><%= item['supplier'] %></td>
+            <td><%= item['manufacturer'] %></td>
+            <td><%= item['item_name'] %></td>
+            <td><%= item['manufacturer_ref_num'] %></td>
+            <td><%= item['quantity'] %></td>
+            <td><%= item['item_type'] %></td>
+            <td><%= item['item_desc'] %></td>
+            <td><%= item['item_url'] %></td>
+            <td><%= item['item_expiry_date'] %></td>
+            <td><%= item['date_available_from'] %></td>
+            <td><%= item['date_available_to'] %></td>
+            <td><%= item['storage_location'] %></td>
+            <td><%= item['storage_req'] %></td>
+            <td><%= item['requester_org_id'] %></td>
+            <td><button><a href="/items/<%= item['id'] %>">Details</a></button></td>
+            <td><button><a href="/items/<%= item['id'] %>/edit">Edit</a></button></td>
+            <td><button><a href="/items/<%= item['id'] %>/request">Request</a></button></td>
+            <td>
+                <form action="/items/<%= item['id'] %>" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% end %>
+</table>
+
+<%# outside MVP: create search function that then calls back to '/items/request %>
