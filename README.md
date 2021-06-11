@@ -9,6 +9,8 @@ ProjectToo is a database backed web application that allows suppliers & manufact
 
 ## Approach Taken
 
+https://whimsical.com/full-flowchart-db-layout-7SPVYMcZkVCqDd6xaUBt9Y
+
 ## Installation Instructions
 
 ## Outstanding Issues & Improvement Next-Steps
