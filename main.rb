@@ -132,7 +132,7 @@ end
 delete '/items/:id' do
   redirect '/login' unless logged_in?
   run_sql("DELETE FROM supplier_items WHERE id = $1;", [params['id']])
-  redirect "/items/#{current_user()['id']}"
+  redirect "/items"
 end
 
 get '/items/:id/edit' do
@@ -208,3 +208,5 @@ delete '/session' do
   session[:user_id] = nil
   redirect '/'
 end
+
+# edit & delete user profile

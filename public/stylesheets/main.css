@@ -23,7 +23,7 @@
     border-right: 1px solid black;
     color: black;
     text-align: center;
-    font-size: 16pt;
+    font-size: 12pt;
     font-weight: lighter;
     font-stretch: expanded;
     font-family: 'Barlow Semi Condensed';
@@ -62,7 +62,6 @@ main {
 .main_ul {
     margin-top: 2px;
     margin-bottom: 2px;
-    height: ;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -75,7 +74,7 @@ main {
     border-right: 1px solid black;
     color: black;
     text-align: center;
-    font-size: 16pt;
+    font-size: 12pt;
     font-weight: lighter;
     font-stretch: expanded;
 }
