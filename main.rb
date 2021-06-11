@@ -121,10 +121,11 @@ get '/items/:id' do
     res = run_sql("SELECT * FROM supplier_items WHERE id = $1, org_id = $2;", [params['id']], current_user()['org_id'])
     item = res[0]
     erb :show_item, locals: { item: item }
+  else
+    res = run_sql("SELECT * FROM supplier_items WHERE id = $1;", [params['id']])
+    item = res[0]
+    erb :show_item, locals: { item: item }
   end
-  res = run_sql("SELECT * FROM supplier_items WHERE id = $1;", [params['id']])
-  item = res[0]
-  erb :show_item, locals: { item: item }
 
 end
 
@@ -143,7 +144,7 @@ end
 patch '/items/:id' do #***** CHECK IF PATCH OR PUT
   sql = "UPDATE supplier_items SET user_id = $1, manufacturer = $2, item_name = $3, manufacturer_ref_num = $4, quantity = $5, item_type = $6, item_desc = $7, item_url = $8, item_expiry_date = $9, date_available_from = $10, date_available_to = $11, storage_location = $12, storage_req = $13 WHERE id = $14;"
 
-  run_sql(sql, 
+  run_sql(sql, [
     current_user()['id'],
     params['manufacturer'],
     params['item_name'],
@@ -157,7 +158,8 @@ patch '/items/:id' do #***** CHECK IF PATCH OR PUT
     params['date_available_to'],
     params['storage_location'],
     params['storage_req'],
-  )
+    params['id']
+  ])
 
   redirect "/items/#{current_user()['id']}"
 end
@@ -169,24 +171,20 @@ end
 
 post '/login' do
   password_digest = BCrypt::Password.create("#{params['password']}")
-  sql = "INSERT INTO users (email, password_digest) VALUES ($1, $2);"
-  run_sql(sql, 
+
+  sql = "INSERT INTO users (org_type, regulatory_authority, registration_num, org_name, individual_name, phone_num, email, password_digest) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);"
+
+  run_sql(sql, [
+    params['org_type'],
+    params['regulatory_authority'],
+    params['registration_num'],
+    params['org_name'],
+    params['individual_name'],
+    params['phone_num'],
     params['email'],
-    params['password']
-    )
-
-  # sql = "INSERT INTO users (org_type, regulatory_authority, registration_num, org_name, individual_name, phone_num, email, password_digest) VALUES ($1, $2, $3, $4, $5, $6, $7, '#{password_digest}');"
-
-  # run_sql(sql,
-  #   params['org_type'],
-  #   params['regulatory_authority'],
-  #   params['registration_num'],
-  #   params['org_name'],
-  #   params['individual_name'],
-  #   params['phone_num'],
-  #   params['email'],
-  # )
-  redirect '/login'
+    password_digest
+  ])
+  redirect '/'
 end
 
 get '/login' do
@@ -195,8 +193,7 @@ end
 
 post '/session' do
   records = run_sql("SELECT * FROM users WHERE email = $1;", [params['email']])
-  if records.count > 0
-  # if records.count > 0 && BCrypt::Password.new(records[0]['password_digest']) == params['password']
+  if records.count > 0 && BCrypt::Password.new(records[0]['password_digest']) == params['password']
     logged_in_user = records[0]
     session[:user_id] = logged_in_user["id"]
     session[:org_type] = logged_in_user["org_type"]

@@ -1,1 +1,46 @@
-<h1>hi edit form</h1>
+<h1>Edit Item</h1>
+
+<form action="/items/<%= item['id'] %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="manufacturer">Manufacturer</label>
+    <input type="text" name= "manufacturer" id="<%= item['manufacturer'] %>" value="<%= item['manufacturer'] %>">
+
+    <label for="item_name">Item Name</label>
+    <input type="text" name= "item_name" id="<%= item['item_name'] %>" value="<%= item['item_name'] %>">
+
+    <label for="manufacturer_ref_num">Manufacturer Reference Number</label>
+    <input type="text" name= "manufacturer_ref_num" id="<%= item['manufacturer_ref_num'] %>" value="<%= item['manufacturer_ref_num'] %>">
+
+    <label for="quantity">Quantity</label>
+    <input type="number" name= "quantity" id="<%= item['quantity'] %>" value="<%= item['quantity'] %>">
+
+    <label for="item_type">Item Type</label>
+    <input type="text" name= "item_type" id="<%= item['item_type'] %>" value="<%= item['item_type'] %>">
+
+    <label for="item_desc">Item Description</label>
+    <input type="text" name= "item_desc" id="<%= item['item_desc'] %>" value="<%= item['item_desc'] %>">
+
+    <label for="item_url">User Manual URL</label>
+    <input type="text" name= "item_url" id="<%= item['item_url'] %>" value="<%= item['item_url'] %>">
+
+    <label for="item_expiry_date">Expiry Date</label>
+    <input type="date" name= "item_expiry_date" id="<%= item['item_expiry_date'] %>" value="<%= item['item_expiry_date'] %>">
+
+    <label for="date_available_from">Available From</label>
+    <input type="date" name= "date_available_from" id="<%= item['date_available_from'] %>" value="<%= item['date_available_from'] %>">
+
+    <label for="date_available_to">Available To</label>
+    <input type="date" name= "date_available_to" id="<%= item['date_available_to'] %>" value="<%= item['date_available_to'] %>">
+
+    <label for="storage_location">Storage Location</label>
+    <input type="text" name= "storage_location" id="<%= item['storage_location'] %>" value="<%= item['storage_location'] %>">
+
+    <label for="storage_req">Storage Requirements</label>
+    <input type="text" name= "storage_req" id="<%= item['storage_req'] %>" value="<%= item['storage_req'] %>">
+
+    <button>Update Item Details</button>
+
+</form>
+
+<button><a href="/items/<%= item['id'] %>/request">Request</a></button>

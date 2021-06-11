@@ -1,1 +1,25 @@
-<h1>Hi Item Details</h1>
+<h1>Item Details</h1>
+
+<p><%= item['supplier'] %></p>
+<p><%= item['manufacturer'] %></p>
+<p><%= item['item_name'] %></p>
+<p><%= item['manufacturer_ref_num'] %></p>
+<p><%= item['quantity'] %></p>
+<p><%= item['item_type'] %></p>
+<p><%= item['item_desc'] %></p>
+<p><%= item['item_url'] %></p>
+<p><%= item['item_expiry_date'] %></p>
+<p><%= item['date_available_from'] %></p>
+<p><%= item['date_available_to'] %></p>
+<p><%= item['storage_location'] %></p>
+<p><%= item['storage_req'] %></p>
+<p><%= item['requester_org_id'] %></p>
+
+<button><a href="/items/<%= item['id'] %>/edit">Edit</a></button>
+<button><a href="/items/<%= item['id'] %>/request">Request</a></button>
+        
+<form action="/items/<%= item['id'] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete</button>
+</form>
+            
