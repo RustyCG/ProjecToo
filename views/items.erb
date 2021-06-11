@@ -36,7 +36,12 @@
             <td><%= item['requester_org_id'] %></td>
             <td><button><a href="/items/<%= item['id'] %>">Details</a></button></td>
             <td><button><a href="/items/<%= item['id'] %>/edit">Edit</a></button></td>
-            <td><button><a href="/items/<%= item['id'] %>/request">Request</a></button></td>
+            <td>
+                <form action="/items/<%= item['id'] %>/request" method="post">
+                    <input type="hidden" name="_method" value="patch">
+                    <button>Request</button>
+                </form>
+            </td>
             <td>
                 <form action="/items/<%= item['id'] %>" method="post">
                     <input type="hidden" name="_method" value="delete">
