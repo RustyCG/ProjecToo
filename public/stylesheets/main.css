@@ -3,18 +3,19 @@
     background-color: rgb(159, 223, 248);
     /* margin: 2% 5% 5% 5%; */
 }
-body {
-    width: 80%;
+.layout_header {
+    width: 70%;
+    margin: 5% auto 2% auto;
 }
-ul {
+.layout_ul {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     background-color: black;
 }
-li {
+.layout_li {
     padding: 15px;
     list-style-type: none;
     list-style-position: outside;
@@ -24,4 +25,14 @@ li {
     font-size: 16pt;
     font-weight: lighter;
     font-stretch: expanded;
+}
+.layout_ul li:last-child {
+    border-right: none;
+}
+main {
+    width: 70%;
+    margin: 20px auto;
+}
+a {
+    text-decoration: none;
 }
