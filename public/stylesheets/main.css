@@ -39,7 +39,7 @@ a {
     width: 70%;
     margin: 5% auto 2% auto;
     text-align: center;
-    color: white;
+    color: rgb(46, 46, 46);
     font-weight: bold;
     font-stretch: expanded;
     font-size: 45pt;
@@ -49,7 +49,7 @@ a {
     width: 70%;
     margin: 5% auto 2% auto;
     text-align: center;
-    color: white;
+    color: rgb(61, 61, 61);
     font-weight: lighter;
     font-stretch: expanded;
     font-size: 30pt;
@@ -62,6 +62,7 @@ main {
 .main_ul {
     margin-top: 2px;
     margin-bottom: 2px;
+    height: ;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -80,7 +81,7 @@ main {
 }
 .main_h1  {
     width: 70%;
-    margin: 5% auto 2% auto;
+    margin: 2% auto 2% auto;
     text-align: center;
     color: black;
     font-weight: bold;
@@ -89,7 +90,7 @@ main {
 }
 .main_h3 {
     width: 70%;
-    margin: 5% auto 2% auto;
+    margin: 2% auto 2% auto;
     text-align: center;
     color: black;
     font-weight: lighter;
@@ -98,7 +99,7 @@ main {
 }
 h1  {
     width: 70%;
-    margin: 5% auto 2% auto;
+    margin: 2% auto 2% auto;
     text-align: center;
     color: mistyrose;
     font-weight: bold;
@@ -107,10 +108,24 @@ h1  {
 }
 h3 {
     width: 70%;
-    margin: 5% auto 2% auto;
+    margin: 2% auto 2% auto;
     text-align: center;
     color: mistyrose;
     font-weight: lighter;
     font-stretch: expanded;
     font-size: 30pt;
+}
+tr {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+th, td {
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+}
+th:first-child, td:first-child {
+    border-left: none
+}
+th:last-child, th:last-child {
+    border-right: 1px solid grey;
 }
