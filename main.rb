@@ -196,8 +196,8 @@ post '/session' do
   if records.count > 0 && BCrypt::Password.new(records[0]['password_digest']) == params['password']
     logged_in_user = records[0]
     session[:user_id] = logged_in_user["id"]
-    session[:org_type] = logged_in_user["org_type"]
-    session[:org_id] = logged_in_user["org_id"]
+    # session[:org_type] = logged_in_user["org_type"]
+    # session[:org_id] = logged_in_user["org_id"]
     redirect '/main'
   else
     erb :login

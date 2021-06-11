@@ -1,7 +1,7 @@
 require 'bcrypt'
 require 'pry' if development?
 require 'pg'
-# require_relative 'helpers.rb'
+require_relative 'helpers.rb'
 
 def create_user(params = [])
     password_digest = BCrypt::Password.create("#{params['password']}")

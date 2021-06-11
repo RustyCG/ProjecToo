@@ -43,4 +43,7 @@
 
 </form>
 
-<button><a href="/items/<%= item['id'] %>/request">Request</a></button>
+<form action="/items/<%= item['id'] %>/request" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <button>Request</button>
+</form>
