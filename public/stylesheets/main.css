@@ -115,6 +115,10 @@ h3 {
     font-stretch: expanded;
     font-size: 30pt;
 }
+table {
+    border-left: auto;
+    border-radius: auto;
+}
 table> th, td {
     text-align: center;
 }
