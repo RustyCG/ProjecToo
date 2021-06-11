@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
     background-color: rgb(159, 223, 248);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: 'Bebas Neue', cursive;
     /* margin: 2% 5% 5% 5%; */
 }
 .layout_header {
