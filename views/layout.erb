@@ -9,15 +9,19 @@
 <body>
 
 <% if logged_in?%>
-    logged in as <%= current_user()['email'] %>
-    <a href="/main">Home</a>
-    <a href="/items/new">Quick Add Item</a>
-    <a href="/items">Item List</a>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button>Logout</button>
-    </form>
-  <% end %>
+  <header>
+    <ul>
+      <li><a href="/main">Home</a></li>
+      <li><a href="/items/new">Quick Add Item</a></li>
+      <li><a href="/items">Item List</a></li>
+      <li><form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Logout</button>
+      </form></li>
+      <li>logged in as <%= current_user()['email'] %></li>
+    </ul>
+  </header>
+<% end %>
 
   <%= yield %>
 

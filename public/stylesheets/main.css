@@ -1,4 +1,27 @@
 * {
+    box-sizing: border-box;
     background-color: rgb(159, 223, 248);
-    margin: 2% 5% 5% 5%;
+    /* margin: 2% 5% 5% 5%; */
+}
+body {
+    width: 80%;
+}
+ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: black;
+}
+li {
+    padding: 15px;
+    list-style-type: none;
+    list-style-position: outside;
+    border-right: 1px solid white;
+    color: white;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: lighter;
+    font-stretch: expanded;
 }
