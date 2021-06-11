@@ -115,6 +115,9 @@ h3 {
     font-stretch: expanded;
     font-size: 30pt;
 }
+table> th, td {
+    text-align: center;
+}
 tr {
     border-top: 1px solid grey;
     border-bottom: 1px solid grey;
@@ -127,5 +130,5 @@ th:first-child, td:first-child {
     border-left: none
 }
 th:last-child, th:last-child {
-    border-right: 1px solid grey;
+    border-right: none;
 }
