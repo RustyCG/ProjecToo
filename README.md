@@ -16,11 +16,10 @@ Created using:
 
 ## Approach Taken
 
-- Started by bui a flowchart and rough database outline:
+Began by building a flowchart and rough database outline:
 https://whimsical.com/full-flowchart-db-layout-7SPVYMcZkVCqDd6xaUBt9Y
-- 
 
-## Instructions
+From there I began building the program, starting with establishing the user login, create profile, and session framework then progressing on to the various pages and functionality for users to access and utilise the database.
 
 ## Outstanding Issues & Improvement Next-Steps
 
