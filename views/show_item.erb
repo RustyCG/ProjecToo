@@ -16,7 +16,10 @@
 <p><%= item['requester_org_id'] %></p>
 
 <button><a href="/items/<%= item['id'] %>/edit">Edit</a></button>
-<button><a href="/items/<%= item['id'] %>/request">Request</a></button>
+<form action="/items/<%= item['id'] %>/request" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <button>Request</button>
+</form>
         
 <form action="/items/<%= item['id'] %>" method="post">
     <input type="hidden" name="_method" value="delete">

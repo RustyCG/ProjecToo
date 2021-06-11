@@ -1,28 +1,28 @@
 
-<h1><%= current_user()['org_name'] %> ProjecToo Actions</h1>
+<h1 class="main_h1"><%= current_user()['org_name'] %> ProjecToo Actions</h1>
 
 <% if org_type == "consumer" %>
-    <nav>
-        <ul class="main_nav">
-            <li class="nav_items"><a href="/items">View 'Available' List</a></li>
-            <li class="nav_items"><a href="">Search by Item</a></li>
-            <li class="nav_items"><a href="">Request Item</a></li>
-            <li class="nav_items"><a href="">Edit Requested Items List</a></li>
+    <nav class="main_nav">
+        <ul class="main_ul">
+            <li class="main_li"><a href="/items">View 'Available' List</a></li>
+            <li class="main_li"><a href="">Search by Item</a></li>
+            <li class="main_li"><a href="">Request Item</a></li>
+            <li class="main_li"><a href="">Edit Requested Items List</a></li>
         </ul>
     </nav>
 <% else %>
-    <nav>
-        <ul class="main_nav">
-            <li class="nav_items"><a href="/items">View 'Available' List</a></li>
-            <li class="nav_items"><a href="">Search by Item</a></li>
-            <li class="nav_items"><a href="/items/new">Add Item</a></li>
-            <li class="nav_items"><a href="">View 'Requested' List</a></li>
+    <nav class="main_nav">
+        <ul class="main_ul">
+            <li class="main_li"><a href="/items">View 'Available' List</a></li>
+            <li class="main_li"><a href="">Search by Item</a></li>
+            <li class="main_li"><a href="/items/new">Add Item</a></li>
+            <li class="main_li"><a href="">View 'Requested' List</a></li>
         </ul>
     </nav>
 <% end %>
 
 
-<h3>Quick Global View of Available Items</h3>
+<h3 class="main_h3">Quick Global View of Available Items</h3>
 <table class="main_table">
     <tr>
         <th>Item Type</th>

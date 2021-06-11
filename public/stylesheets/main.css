@@ -8,7 +8,7 @@
     margin: 5% auto 2% auto;
 }
 .layout_ul {
-    margin-top: 10px;
+    margin-top: 2px;
     margin-bottom: 10px;
     padding: 0;
     display: grid;
@@ -19,8 +19,8 @@
     padding: 15px;
     list-style-type: none;
     list-style-position: outside;
-    border-right: 1px solid white;
-    color: white;
+    border-right: 1px solid black;
+    color: black;
     text-align: center;
     font-size: 16pt;
     font-weight: lighter;
@@ -29,10 +29,83 @@
 .layout_ul li:last-child {
     border-right: none;
 }
+a {
+    text-decoration: none;
+}
+.index_h1  {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-stretch: expanded;
+    font-size: 45pt;
+}
+.index_h2 {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-stretch: expanded;
+    font-size: 30pt;
+}
 main {
     width: 70%;
     margin: 20px auto;
 }
-a {
-    text-decoration: none;
+.main_ul {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: black;
+}
+.main_li {
+    padding: 15px;
+    list-style-type: none;
+    list-style-position: outside;
+    border-right: 1px solid black;
+    color: black;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: lighter;
+    font-stretch: expanded;
+}
+.main_h1  {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-stretch: expanded;
+    font-size: 45pt;
+}
+.main_h3 {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: black;
+    font-weight: lighter;
+    font-stretch: expanded;
+    font-size: 30pt;
+}
+h1  {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: mistyrose;
+    font-weight: bold;
+    font-stretch: expanded;
+    font-size: 45pt;
+}
+h3 {
+    width: 70%;
+    margin: 5% auto 2% auto;
+    text-align: center;
+    color: mistyrose;
+    font-weight: lighter;
+    font-stretch: expanded;
+    font-size: 30pt;
 }
