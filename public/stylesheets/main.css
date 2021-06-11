@@ -2,7 +2,6 @@
     box-sizing: border-box;
     background-color: rgb(159, 223, 248);
     font-family: 'Barlow Semi Condensed', sans-serif;
-    font-family: 'Bebas Neue', cursive;
     /* margin: 2% 5% 5% 5%; */
 }
 .layout_header {
@@ -27,12 +26,14 @@
     font-size: 16pt;
     font-weight: lighter;
     font-stretch: expanded;
+    font-family: 'Barlow Semi Condensed';
 }
 .layout_ul li:last-child {
     border-right: none;
 }
 a {
     text-decoration: none;
+    font-family: 'Barlow Semi Condensed';
 }
 .index_h1  {
     width: 70%;
@@ -42,6 +43,7 @@ a {
     font-weight: bold;
     font-stretch: expanded;
     font-size: 45pt;
+    font-family: 'Bebas Neue';
 }
 .index_h2 {
     width: 70%;
@@ -51,6 +53,7 @@ a {
     font-weight: lighter;
     font-stretch: expanded;
     font-size: 30pt;
+    font-family: 'Bebas Neue';
 }
 main {
     width: 70%;
